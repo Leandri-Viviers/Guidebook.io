@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+// Components
+import Navbar from './components/Navbar'
+import Routes from './components/Routes'
+// Router
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import './custom.css'
-
-export default class App extends Component {
-  static displayName = App.name;
-
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <Navbar title="Guidebook.io"></Navbar>
+      <Routes />
+    </Router>
+  )
 }
+
+export default App
